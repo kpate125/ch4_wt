@@ -90,11 +90,12 @@ end
     redirect_to movie_path(@movie)
   end
 
-  def destroy
-    @movie = Movie.find(params[:id])
-    @movie.destroy
-    flash[:notice] = "Movie '#{@movie.title}' deleted."
-    redirect_to movies_path
-  end
+def destroy
+  @movie = Movie.find(params[:id])
+  @movie.destroy
+  flash[:notice] = "Movie '#{@movie.title}' deleted."
+  redirect_to movies_path
+end
+
 #, if params[:ratings]; params[:ratings].include?(rating) end
 end
